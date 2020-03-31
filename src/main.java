@@ -9,9 +9,6 @@ public class main {
                     calculator frame = new calculator ();
                     frame.setVisible(true);
 
-
-
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
