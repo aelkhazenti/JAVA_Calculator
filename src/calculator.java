@@ -218,7 +218,7 @@ public class calculator extends JFrame implements ActionListener {
             c.setVisible(true);
             c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             c.setSize(720, 150);
-//            c.setResizable(false);
+            c.setResizable(false);
             c.setLocationRelativeTo(null);
 
 
