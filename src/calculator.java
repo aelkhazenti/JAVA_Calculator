@@ -3,8 +3,24 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import javax.swing.border.EmptyBorder;
+
+
 
 public class calculator extends JFrame implements ActionListener {
+
+
+    Choice os, so;
+    JButton brez;
+    JTextField t1, t2;
+    JLabel l1, l2;
+    ActionListener list ;
+    Long value;
+    String name="",name2="";
+
+
 
     private JPanel contentPane;
     private JMenu jMenuFile, jMenuHelp;
@@ -17,14 +33,18 @@ public class calculator extends JFrame implements ActionListener {
     Font f12 = new Font("Times New Roman", 0, 12);
     Font f121 = new Font("Times New Roman", 1, 12);
     private char op;
-    ActionListener list ;
+
+
+
+
+
 
     public calculator() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(200, 200, 550, 450);
         contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder (5, 5, 5, 5));
-        contentPane.setLayout(new BorderLayout (0, 0));
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
 
         // MEnu File
@@ -139,10 +159,102 @@ public class calculator extends JFrame implements ActionListener {
 
     }
 
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
+//         TODO Auto-generated method stub
+        String resultStr;
+        String str = String.valueOf(e.getActionCommand());
+
+        char ch = str.charAt(0);
+
+        switch(ch)
+        {
+            case '0': case '1': case '2':
+            case '3': case '4': case '5':
+            case '6': case '7': case '8':
+            case '9': if(firstInput)
+            {
+                numStr1 = numStr1 + ch;
+                jLabelOuput.setText(numStr1);
+            }
+            else
+            {
+                numStr2 = numStr2 + ch;
+                jLabelOuput.setText(numStr2);
+            }
+                break;
+            case '+': case '-': case '*':                       //Step 4b
+
+            case '/': op = ch;
+                firstInput = false;
+                break;
+
+            case '=': resultStr = evaluate();                   //Step 4c
+                jLabelOuput.setText(resultStr);
+                numStr1 = resultStr;
+                numStr2 = "";
+                firstInput = false;
+                break;
+
+            case 'C': jLabelOuput.setText("");                  //Step 4c
+                numStr1 = "";
+                numStr2 = "";
+                firstInput = true;
+
+
+
+
+        }
+
+
+        if (e.getSource () == JbnButtons[20]){
+
+
+            setVisible (false);
+
+            BinaryCalculator c = new BinaryCalculator("binnary calculator");
+            c.setVisible(true);
+            c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            c.setSize(580, 150);
+            c.setResizable(false);
+            c.setLocationRelativeTo(null);
+
+
+
+        }
+
+
+
+
 
     }
+
+
+    private String evaluate() {
+        int resultat = 0;
+        int x = Integer.parseInt(numStr1);
+        int y = Integer.parseInt(numStr2);
+        int temp = 0;
+        switch(op)
+        {
+            case '+':  resultat = x + y; break;
+            case '-':  resultat = x - y; break;
+            case '*':   resultat = x * y; break;
+            case '/':   resultat = x / y; break;
+
+
+        }
+
+        temp = resultat;
+
+        return String.valueOf(resultat);
+    }
+
+
+
+
 
 
 }
