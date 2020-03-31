@@ -86,6 +86,112 @@ public class BinaryCalculator extends JFrame implements ItemListener {
     }
 
 
+    public void itemStateChanged(ItemEvent e) {
+
+    }
+    class Listener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            try {
+                if (e.getSource() == brez) {
+                    if (name == "10") {
+                        if(name2 == "2"){
+                            value = Long.valueOf(t1.getText());
+                            t2.setText(Long.toBinaryString(value)); // 10-2
+
+
+                        }
+                        if (name2 == "8") {
+                            value = Long.valueOf(t1.getText());
+                            t2.setText(Long.toOctalString(value)); // 10-8
+                        }
+                        if(name2 == "16"){
+                            value = Long.valueOf(t1.getText());
+                            t2.setText(Long.toHexString(value).toUpperCase());//10-16
+                        }
+                        if(name2 == "10"){
+                            value = Long.valueOf(t1.getText());
+                            t2.setText(Long.toString(value));//10-10
+                        }
+
+                    }
+                    if(name == "2"){
+                        if(name2 == "10"){
+                            value = Long.valueOf(t1.getText(), 2);
+                            t2.setText(Long.toString(value));
+
+                        }
+                        if(name2 == "8"){
+                            value = Long.valueOf(t1.getText(), 2);
+                            t2.setText(Long.toOctalString(value));
+
+                        }
+                        if(name2 == "16"){
+                            value = Long.valueOf(t1.getText(), 2);
+                            t2.setText(Long.toHexString(value).toUpperCase());
+
+                        }
+                        if(name2 == "2"){
+                            value = Long.valueOf(t1.getText(), 2);
+                            t2.setText(Long.toBinaryString(value));
+
+                        }
+                    }
+                    if(name == "8"){
+                        if(name2 == "10"){
+                            value = Long.valueOf(t1.getText(),8);
+                            t2.setText(Long.toString(value));//8-10
+                        }
+                        if(name2 == "2"){
+                            value = Long.valueOf(t1.getText(),8);
+                            t2.setText(Long.toBinaryString(value));
+
+                        }
+                        if(name2 == "16"){
+                            value = Long.valueOf(t1.getText(),8);
+                            t2.setText(Long.toHexString(value).toUpperCase());
+                        }
+                        if(name2 == "8"){
+                            value = Long.valueOf(t1.getText(), 8);
+                            t2.setText(Long.toOctalString(value));
+
+                        }
+                    }
+                    if(name == "16"){
+                        if(name2 == "10"){
+                            value = Long.valueOf(t1.getText(),16);
+                            t2.setText(Long.toString(value));//16-10
+                        }
+                        if(name2 == "8"){
+                            value = Long.valueOf(t1.getText(),16);
+
+                            t2.setText(Long.toOctalString(value));
+                        }
+                        if(name2 == "2"){
+                            value = Long.valueOf(t1.getText(),16);
+
+                            t2.setText(Long.toBinaryString(value));
+                        }
+                        if(name2 == "16"){
+                            value = Long.valueOf(t1.getText(),16);
+                            t2.setText(Long.toHexString(value).toUpperCase());
+
+                        }
+                    }
+
+                }
+            }catch (Exception ex){
+                JOptionPane.showMessageDialog(null, "you have to enter a number");
+                t2.setText(null);
+            }
+
+
+
+        }
+
+
+    }
+
+
 
 
 
