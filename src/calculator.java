@@ -86,9 +86,9 @@ public class calculator extends JFrame implements ActionListener {
         JbnButtons[19] = new JButton("log");
         jplBackSpace = new JPanel();
         jplBackSpace.setLayout(new GridLayout(1, 1, 2, 2));
-        JbnButtons[20] = new JButton("Backspace");
+        JbnButtons[20] = new JButton("Binary Calculator");
         jplBackSpace.add(JbnButtons[20]);
-
+        jplBackSpace.setBackground (Color.yellow);
         JbnButtons[20].addActionListener (list);
         jplControl = new JPanel();
         jplControl.setLayout(new GridLayout(1, 2, 2, 2));
@@ -217,8 +217,8 @@ public class calculator extends JFrame implements ActionListener {
             BinaryCalculator c = new BinaryCalculator("binnary calculator");
             c.setVisible(true);
             c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            c.setSize(580, 150);
-            c.setResizable(false);
+            c.setSize(720, 150);
+//            c.setResizable(false);
             c.setLocationRelativeTo(null);
 
 
