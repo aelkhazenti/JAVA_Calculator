@@ -30,7 +30,7 @@ public class calculator extends JFrame implements ActionListener {
     private boolean firstInput = true;
     private String numStr1 = "";
     private String numStr2 = "";
-    Font f12 = new Font("Times New Roman", 0, 12);
+    Font f12 = new Font("Times New Roman", 0, 14);
     Font f121 = new Font("Times New Roman", 1, 12);
     private char op;
 
@@ -66,7 +66,7 @@ public class calculator extends JFrame implements ActionListener {
         // add our componante to fram
         getContentPane().add(jLabelOuput, BorderLayout.NORTH);
 
-        JbnButtons = new JButton[23];
+                JbnButtons = new JButton[26];
 
         for(int i = 0; i<= 9; i++) {
             JbnButtons[i] = new JButton(String.valueOf(i));
@@ -89,6 +89,10 @@ public class calculator extends JFrame implements ActionListener {
 
         JbnButtons[19] = new JButton("log");
         JbnButtons[19].addActionListener (list);
+
+        JbnButtons[23] = new JButton ("cos");
+        JbnButtons[24] = new JButton ("sin");
+        JbnButtons[25] = new JButton ("tan");
 
         jplBackSpace = new JPanel();
         jplBackSpace.setLayout(new GridLayout(1, 1, 2, 2));
@@ -123,6 +127,7 @@ public class calculator extends JFrame implements ActionListener {
         // add button / and sqrt
         jPLButtons.add(JbnButtons[13]);
         jPLButtons.add(JbnButtons[17]);
+        jPLButtons.add (JbnButtons[23]);
         // Second row
         for (int i = 4; i <= 6; i++) {
             jPLButtons.add(JbnButtons[i]);
@@ -130,6 +135,7 @@ public class calculator extends JFrame implements ActionListener {
         // add button * and x^2
         jPLButtons.add(JbnButtons[14]);
         jPLButtons.add(JbnButtons[18]);
+        jPLButtons.add (JbnButtons[24]);
         // Third row
         for (int i = 1; i <= 3; i++) {
             jPLButtons.add(JbnButtons[i]);
@@ -137,6 +143,7 @@ public class calculator extends JFrame implements ActionListener {
         //adds button - and %
         jPLButtons.add(JbnButtons[15]);
         jPLButtons.add(JbnButtons[19]);
+        jPLButtons.add (JbnButtons[25]);
         //Fourth Row
         // add 0, +/-, ., +, and =
         jPLButtons.add(JbnButtons[0]);
@@ -144,6 +151,7 @@ public class calculator extends JFrame implements ActionListener {
         jPLButtons.add(JbnButtons[11]);
         jPLButtons.add(JbnButtons[16]);
         jPLButtons.add(JbnButtons[12]);
+        
 
         // JPANEL MASET
         jMaster.setLayout(new BorderLayout());
@@ -221,9 +229,23 @@ public class calculator extends JFrame implements ActionListener {
                 firstInput = false;
                 break;
 
+            case 'c' :
+                jLabelOuput.setText (String.valueOf (Math.cos (Double.parseDouble (numStr1))));
+                System.out.println (numStr1);
+                firstInput = false;
+                break;
 
+            case 's':
+                jLabelOuput.setText (String.valueOf (Math.sin (Double.parseDouble (numStr1))));
+                System.out.println (numStr1);
+                firstInput = false;
+                break;
 
-
+            case 't':
+                jLabelOuput.setText (String.valueOf (Math.tan(Double.parseDouble (numStr1))));
+                System.out.println (numStr1);
+                firstInput = false;
+                break;
         }
 
         if (e.getSource () == JbnButtons[20]){
