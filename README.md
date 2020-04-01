@@ -34,8 +34,7 @@ Abstract Window Toolkit (AWT) is a graphics library for Java, part of the Java F
 :memo: FUNCTIONNALITIES
 ---
 - calculator 
- ![](https://i.imgur.com/4oHLEF2.png)
-
+ ![](https://i.imgur.com/lEU5h6u.png)
 
 
 
