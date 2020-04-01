@@ -191,7 +191,7 @@ public class calculator extends JFrame implements ActionListener {
                 jLabelOuput.setText(numStr2);
             }
                 break;
-            case '+': case '-': case '*':                       //Step 4b
+            case '+': case '-': case '*':  case 'p':                     //Step 4b
 
             case '/': op = ch;
                 firstInput = false;
@@ -221,7 +221,7 @@ public class calculator extends JFrame implements ActionListener {
                 firstInput = false;
                 break;
 
-            case 'p': System.out.println ("pow"); break;
+
 
 
         }
@@ -261,6 +261,7 @@ public class calculator extends JFrame implements ActionListener {
             case '-':  resultat = x - y; break;
             case '*':   resultat = x * y; break;
             case '/':   resultat = x / y; break;
+            case 'p':  resultat = Math.pow (x,y); break;
         }
 
         temp = resultat;
