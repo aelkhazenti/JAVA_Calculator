@@ -81,9 +81,16 @@ public class calculator extends JFrame implements ActionListener {
         JbnButtons[14] = new JButton("*");
         JbnButtons[15] = new JButton("-");
         JbnButtons[16] = new JButton("+");
+
         JbnButtons[17] = new JButton("√");
+        JbnButtons[17].addActionListener (list);
+
         JbnButtons[18] = new JButton("pow");
-        JbnButtons[19] = new JButton("log");
+        JbnButtons[18].addActionListener (list);
+
+        JbnButtons[19] = new JButton("l");
+        JbnButtons[19].addActionListener (list);
+
         jplBackSpace = new JPanel();
         jplBackSpace.setLayout(new GridLayout(1, 1, 2, 2));
         JbnButtons[20] = new JButton("Binary Calculator");
@@ -203,15 +210,17 @@ public class calculator extends JFrame implements ActionListener {
                 numStr2 = "";
                 firstInput = true;
 
+            case '√':
+                jLabelOuput.setText (String.valueOf (Math.sqrt (Double.parseDouble (numStr1))));
+                System.out.println (numStr1);
+                firstInput = false;
+                break;
 
-
+             
 
         }
 
-
         if (e.getSource () == JbnButtons[20]){
-
-
             setVisible (false);
 
             BinaryCalculator c = new BinaryCalculator("binnary calculator");
@@ -221,22 +230,20 @@ public class calculator extends JFrame implements ActionListener {
             c.setResizable(false);
             c.setLocationRelativeTo(null);
 
-
-
         }
 
+        if (e.getSource () == JbnButtons[17]){
 
-
-
+        }
 
     }
 
 
     private String evaluate() {
-        int resultat = 0;
+        double resultat = 0;
         int x = Integer.parseInt(numStr1);
         int y = Integer.parseInt(numStr2);
-        int temp = 0;
+        double temp = 0;
         switch(op)
         {
             case '+':  resultat = x + y; break;
@@ -244,6 +251,7 @@ public class calculator extends JFrame implements ActionListener {
             case '*':   resultat = x * y; break;
             case '/':   resultat = x / y; break;
 
+          
 
         }
 

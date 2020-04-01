@@ -7,7 +7,7 @@ import java.lang.*;
 
 public class BinaryCalculator extends JFrame implements ItemListener {
     Choice os, so;
-    JButton brez;
+    JButton brez,calc,back;
     JTextField t1, t2;
     JLabel l1, l2;
     Listener list = new Listener();
@@ -20,6 +20,8 @@ public class BinaryCalculator extends JFrame implements ItemListener {
 
         setLayout(new FlowLayout());
         brez = new JButton("traduisez");
+        calc = new JButton ("back to calculator");
+        
         t1 = new JTextField(20);
         t2 = new JTextField(20);
         l1 = new JLabel("Entrez votre numéro :                                                                          ");
@@ -45,7 +47,9 @@ public class BinaryCalculator extends JFrame implements ItemListener {
         add(so);
         add(t2);
         add(brez);
+        add(calc);
         brez.addActionListener(list);
+        calc.addActionListener (list);
         t2.setEditable(false);
 
         so.addItemListener(new ItemListener(){
@@ -184,6 +188,11 @@ public class BinaryCalculator extends JFrame implements ItemListener {
                 t2.setText(null);
             }
 
+            if (e.getSource () == calc){
+                setVisible (false);
+                calculator frame = new calculator ();
+                frame.setVisible(true);
+            }
 
 
         }
