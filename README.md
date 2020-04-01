@@ -12,18 +12,6 @@ This project made by ** Aymane EL-KHAZENTI **
 
 :memo: Introduction
 ---
-### specification of requirement
-###  Objective : 
-* create a website for a higher school of technology
-* the website must be created with wordpress
- 
-
-
-<!-- ### The application must allow:
-
-* A connection space offered for connect to database
-* the user have the access to add , update ,delete in the database -->
-
 
 
 :memo: Environment and development tools
@@ -62,25 +50,14 @@ Abstract Window Toolkit (AWT) is a graphics library for Java, part of the Java F
 
 
 
-- test of binary calculator 
+- test of binary calculator
+ 
 ![](https://i.imgur.com/8XWlYL8.png)
 
 
--
 - In case of error
 
 ![](https://i.imgur.com/zDRVoPs.png)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
