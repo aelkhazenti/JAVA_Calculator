@@ -83,12 +83,11 @@ public class calculator extends JFrame implements ActionListener {
         JbnButtons[16] = new JButton("+");
 
         JbnButtons[17] = new JButton("√");
-        JbnButtons[17].addActionListener (list);
-
+        
         JbnButtons[18] = new JButton("pow");
         JbnButtons[18].addActionListener (list);
 
-        JbnButtons[19] = new JButton("l");
+        JbnButtons[19] = new JButton("log");
         JbnButtons[19].addActionListener (list);
 
         jplBackSpace = new JPanel();
@@ -216,7 +215,14 @@ public class calculator extends JFrame implements ActionListener {
                 firstInput = false;
                 break;
 
-             
+            case 'l'  :
+                jLabelOuput.setText (String.valueOf (Math.log (Double.parseDouble (numStr1))));
+                System.out.println (numStr1);
+                firstInput = false;
+                break;
+
+            case 'p': System.out.println ("pow"); break;
+
 
         }
 
@@ -232,8 +238,13 @@ public class calculator extends JFrame implements ActionListener {
 
         }
 
-        if (e.getSource () == JbnButtons[17]){
+        if (e.getSource () == JbnButtons[18]){
 
+            double numDoub;
+
+            numDoub = Double.parseDouble (numStr1);
+
+//            jLabelOuput.setText (Math.pow (numDoub);
         }
 
     }
@@ -250,9 +261,6 @@ public class calculator extends JFrame implements ActionListener {
             case '-':  resultat = x - y; break;
             case '*':   resultat = x * y; break;
             case '/':   resultat = x / y; break;
-
-          
-
         }
 
         temp = resultat;
